@@ -1,10 +1,18 @@
-# Proj1
+# Vampire_Number
 
-## 1. Group members
+## Group members
 Yihui Wang UFID# 8316-4355   
 Wei Zhao UFID# 9144-4835
 
-### Steps to run code
+## Problem definition
+
+An interesting kind of number in mathematics is vampire number. A vampire number is a composite natural number with an even number of digits, that can be factored into two natural numbers each with half as many digits as the original number and not both with trailing zeroes, where the two factors contain precisely all the digits of the original number, in any order, counting multiplicity.  A classic example is: 1260= 21 x 60.<br/>
+
+A vampire number can have multiple distinct pairs of fangs. A vampire numbers with 2 pairs of fangs is: 125460 = 204 × 615 = 246 × 510.<br/>
+
+The goal of this project is to use Elixir and the actor model to build a good solution to this problem that runs well on multi-core machines.<br/>
+
+## Steps to run code
 1. Open the Terminal and go to the directory of the project.
 2. Type in the following command:
 ```
@@ -12,15 +20,15 @@ mix run proj1.exs 100000 200000
 ```
 3. The result will be shown on the screen.
 
-## 2. Number of worker actors
+## Number of worker actors
 The program will create 1000 worker actors to find the vampire numbers between 100000 and 200000
 
-## 3. Size of the work unit of each worker actor
+## Size of the work unit of each worker actor
 Each of the workers will calculate 100 numbers.
 We have tried giving each worker different size of numbers such as 50, 100 and 200 numbers.
 Among the results, giving 100 numbers has the best performance in parallelism.
 
-## 4. Result of the program
+## Result of the program
 ```
 $ mix run proj1.exs 100000 200000
 105750 150 705
@@ -81,16 +89,16 @@ $ mix run proj1.exs 100000 200000
 193945 395 491
 197725 275 719
 ```
-## 5. The running time
+## The running time
 ```
 real	0m0.510s
 user	0m2.743s
 sys 	0m0.152s
 ```
-### The ratio of CPU time to REAL TIME
+## The ratio of CPU time to REAL TIME
 CPU time/Real time = 5.6764
 
-## 6. The largest problem to solve
+## The largest problem to solve
 The large problem we have tried in this program is to find the Vampire Number between 10000000 20000000
 ```
 time mix run proj1.exs 10000000 20000000
